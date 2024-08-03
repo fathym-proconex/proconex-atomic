@@ -1,4 +1,4 @@
 export * from 'https://deno.land/x/fathym_common@v0.0.185/mod.ts';
 
 // export * from '../../../fathym-deno/fathym-atomic/mod.ts';
-export * from 'https://deno.land/x/fathym_atomic_design_kit@v0.0.149-integration/mod.ts';
+export * from 'https://deno.land/x/fathym_atomic_design_kit@v0.0.150-integration/mod.ts';
