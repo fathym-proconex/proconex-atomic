@@ -1,17 +1,22 @@
 {
-  "lock": false,
+  "name": "@proconex/atomic",
+  "version": "0.0.0",
+  "exports": {
+    ".": "./mod.ts"
+  },
   "tasks": {
-    "build": "deno task build:fmt && deno task build:lint && deno task test",
+    "build": "deno task build:fmt && deno task build:lint && deno task publish:check && deno task test",
     "build:fmt": "deno fmt",
     "build:lint": "deno lint",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "deploy": "deno task build && ftm git",
-    "test": "deno test -A ./tests/tests.ts --coverage=cov"
+    "publish:check": "deno publish --dry-run --allow-dirty",
+    "test": "deno test -A ./tests/tests.ts --coverage=cov",
+    "version": "deno run -A jsr:@fathym/common@0.0.211/version"
   },
   "imports": {
-    "preact": "https://esm.sh/preact@10.20.1",
-    "preact/": "https://esm.sh/preact@10.20.1/",
-    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.4.0"
+    "preact": "npm:preact@10.20.1",
+    "preact/jsx-runtime": "npm:preact@10.20.1/jsx-runtime"
   },
   "exclude": [
     "**/_eac-runtime/*"
@@ -55,5 +60,6 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
-  }
+  },
+  "lock": false
 }
