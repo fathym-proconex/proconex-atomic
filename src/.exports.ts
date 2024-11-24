@@ -4,4 +4,4 @@ export * from './organisms/.exports.ts';
 export * from './templates/.exports.ts';
 export * from './utils/.exports.ts';
 
-export * from 'jsr:@fathym/atomic-design-kit@0.0.225';
+export * from 'jsr:@fathym/atomic-design-kit@0.0.226';
